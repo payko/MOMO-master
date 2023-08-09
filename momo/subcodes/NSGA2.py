@@ -4,7 +4,8 @@ Created on Mon Jun  6 14:07:42 2022
 
 @author: 86136
 """
-from property import *
+# from property import *
+import property
 from nonDominationSort import *
 import torch
 from tqdm import tqdm
