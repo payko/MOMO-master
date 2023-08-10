@@ -150,7 +150,7 @@ if __name__ == "__main__":
                 iter = 1
                 while iter <= nIter:
                     # 进度条
-                    print("【进度】【{0:20s}】【正在进行{1}代...】【共{2}代】". \
+                    print("【Progress】【{0:20s}】【Now processing {1}/{2} generations】". \
                           format('▋' * int(iter / nIter * 20), iter, nIter), end='\r')
                     chrpops = crossover(pops, pc, d, lb, rb)#混合线性交叉
                     chrpops = mutate(chrpops, pm, nChr,m) # 变异产生子种群

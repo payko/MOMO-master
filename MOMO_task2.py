@@ -28,7 +28,7 @@ if __name__ == "__main__":
                         help='Random seed.')
 
     # parser.add_argument('seq', type=str, help='Sequence to optimize.')
-    parser.add_argument("--smile_path", default="qed_testval.csv")
+    parser.add_argument("--smile_path", default="qed_test.csv") #testval
     parser.add_argument("--seq", default='opti')
 
     args = parser.parse_args()
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     ######加载预训练的JTVAE
     model = CDDDModel()
     # canonicalize
-    data = pd.read_csv('./momo/data/plogp_testval.csv').values
+    data = pd.read_csv('./momo/data/logp_test.csv').values #testval
     orismi_all = pd.read_csv('./momo/data/oripops_plogp/QMO_plogp_mol50_optsmiles.csv').values
     # fit_mol = []
     smi_pro_tuple = []  # 保留所有分子最后一代，一个分子npop个子代
@@ -129,7 +129,7 @@ if __name__ == "__main__":
             iter = 1
             while iter <= nIter:
                 # 进度条
-                print("【进度】【{0:20s}】【正在进行{1}代...】【共{2}代】". \
+                print("【Progress】【{0:20s}】【Now processing {1}/{2} generations】". \
                       format('▋' * int(iter / nIter * 20), iter, nIter), end='\r')
                 #交叉变异
                 #print(fits)
